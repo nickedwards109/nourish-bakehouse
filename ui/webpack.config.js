@@ -6,7 +6,8 @@ module.exports = {
   mode: 'development',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'main.js'
+    filename: 'main.js',
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -37,6 +38,7 @@ module.exports = {
   devServer: {
     hot: true,
     inline: true,
-    publicPath: '/dist/'
+    publicPath: '/dist/',
+    historyApiFallback: true,
   },
 };
