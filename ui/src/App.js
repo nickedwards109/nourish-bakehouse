@@ -1,11 +1,22 @@
 import React from 'react'
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
-import MainScreen from './screens/main'
-import ProductsScreen from './screens/products'
+import MainScreen from 'screens/main'
+import ProductsScreen from 'screens/products'
+import ProductStore from 'stores/product'
 import { PRODUCTS_PATH } from './constants'
 import styles from './App.scss'
 
 export default class App extends React.Component {
+  componentDidMount() {
+    ProductStore.subscribe(this.onStoreUpdate)
+
+    ProductStore.fetchAll()
+  }
+
+  componentWillUnmount() {
+    ProductStore.unsubscribe(this.onStoreUpdate)
+  }
+
   render() {
     return (
       <div className={styles.container}>
@@ -30,5 +41,11 @@ export default class App extends React.Component {
 
   renderMainScreen = () => <MainScreen />
 
-  renderProductsScreen = () => <ProductsScreen />
+  renderProductsScreen = () => (
+    <ProductsScreen
+      products={ProductStore.getAll()}
+    />
+  )
+
+  onStoreUpdate = () => this.forceUpdate()
 }
