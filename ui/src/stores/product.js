@@ -7,7 +7,7 @@ export default BaseStore({
 
   fetchAll() {
     return axios.get('http://localhost:3000/api/v1/products').then(({ data }) => {
-      this.cache.setCollection('all', data.map(obj => ({
+      this.cache.set(data.map(obj => ({
         ...obj,
 
         // TODO stop this once the api returns id's as strings
@@ -17,6 +17,6 @@ export default BaseStore({
   },
 
   getAll() {
-    return this.cache.getCollection('all')
+    return this.cache.get()
   },
 })

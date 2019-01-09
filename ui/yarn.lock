@@ -1782,16 +1782,6 @@ co@^4.6.0:
   resolved "https://registry.yarnpkg.com/co/-/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
   integrity sha1-bqa989hTrlTMuOR7+gvz+QMfsYQ=
 
-cocache-schema@1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/cocache-schema/-/cocache-schema-1.2.2.tgz#c54e3276f7583f3815b7407d7bc574b1968a9156"
-  integrity sha1-xU4ydvdYPzgVt0B9e8V0sZaKkVY=
-
-cocache@1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/cocache/-/cocache-1.2.2.tgz#7ac4277b4e558696253534499dd5232a34f39e04"
-  integrity sha1-esQne05VhpYlNTRJndUjKjTzngQ=
-
 code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
@@ -3770,11 +3760,6 @@ ignore@^4.0.6:
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-4.0.6.tgz#750e3db5862087b4737ebac8207ffd1ef27b25fc"
   integrity sha512-cyFDKrqc/YdcWFniJhzI42+AzS+gNwmUzOSFcRCQYwySuBBBy/KjuxWLZ/FHEH6Moq1NizMOBWyTcv8O4OZIMg==
-
-immutable@4.0.0-rc.12:
-  version "4.0.0-rc.12"
-  resolved "https://registry.yarnpkg.com/immutable/-/immutable-4.0.0-rc.12.tgz#ca59a7e4c19ae8d9bf74a97bdf0f6e2f2a5d0217"
-  integrity sha512-0M2XxkZLx/mi3t8NVwIm1g8nHoEmM9p9UBl/G9k4+hm0kBgOVdMV/B3CY5dQ8qG8qc80NN4gDV4HQv6FTJ5q7A==
 
 import-local@^2.0.0:
   version "2.0.0"

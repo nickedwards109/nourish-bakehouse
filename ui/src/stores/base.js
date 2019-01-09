@@ -1,40 +1,30 @@
-import Cocache from 'cocache'
-import CocacheSchema from 'cocache-schema'
+function Cache(onChange) {
+  let _records_ = []
 
-function State(onChange) {
-  const state = {}
-  return {
-    set(key, value) {
-      state[key] = value
-      onChange()
-    },
+  this.set = function(records) {
+    _records_ = records
+    onChange()
+  }
 
-    get(key, defaultValue) {
-      return (state[key] === undefined) ? defaultValue : state[key]
-    }
+  this.get = function() {
+    return _records_
   }
 }
 
 export default function Store(options) {
   const subscriptions = []
+
   const onChange = () => subscriptions.forEach(fn => fn())
   const subscribe = fn => subscriptions.push(fn)
   const unsubscribe = fn => {
     const i = subscriptions.findIndex(sub => sub === fn)
     subscriptions.splice(i, 1)
   }
-  const cache = Cocache({
-    ...options,
-    onChange,
-    recordValidators: [ CocacheSchema ],
-    schema: options.schema
-  })
-  const state = State(onChange)
+  const cache = new Cache(onChange)
 
   return {
     ...options,
     cache,
-    state,
     subscribe,
     unsubscribe,
     emitChanged: onChange,
