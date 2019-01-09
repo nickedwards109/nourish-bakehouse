@@ -8,7 +8,8 @@
     "prebuild": "yarn clean",
     "start": "yarn build && webpack-dev-server --hot",
     "test:watch": "karma start karma.conf.js",
-    "test": "karma start karma.conf.js --single-run"
+    "test": "karma start karma.conf.js --single-run",
+    "analyze": "ANALYZE_BUNDLE=1 yarn start"
   },
   "browserslist": [
     ">0.2%",
@@ -54,6 +55,7 @@
     "sinon": "7.2.2",
     "style-loader": "0.23.1",
     "webpack": "4.28.2",
+    "webpack-bundle-analyzer": "3.0.3",
     "webpack-cli": "3.1.2",
     "webpack-dev-server": "3.1.14"
   }

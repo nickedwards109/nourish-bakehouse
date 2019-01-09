@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: './src/index.js',
@@ -31,6 +32,9 @@ module.exports = {
       path.resolve('node_modules'),
     ]
   },
+  plugins: process.env.ANALYZE_BUNDLE === '1' ? [
+    new BundleAnalyzerPlugin(),
+  ] : [],
   devtool: 'eval-source-map',
   stats: {
     colors: true
