@@ -1,9 +1,11 @@
 import React from 'react'
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Nav from 'components/nav'
+import AboutScreen from 'screens/about'
 import MainScreen from 'screens/main'
 import ProductsScreen from 'screens/products'
 import ProductStore from 'stores/product'
-import { PRODUCTS_PATH } from './constants'
+import { PRODUCTS_PATH, ABOUT_PATH } from './constants'
 import styles from './App.scss'
 
 export default class App extends React.Component {
@@ -21,25 +23,15 @@ export default class App extends React.Component {
     return (
       <div className={styles.container}>
         <Router>
-          <nav className={styles.nav}>
-            <ul className={styles.navList}>
-              <li>
-                <Link to='/' children='Home' />
-              </li>
-              <li>
-                <Link to={PRODUCTS_PATH} children='Products' />
-              </li>
-            </ul>
-          </nav>
+          <Nav />
 
-          <Route exact path='/' render={this.renderMainScreen} />
+          <Route exact path='/' component={MainScreen} />
           <Route path={PRODUCTS_PATH} render={this.renderProductsScreen} />
+          <Route path={ABOUT_PATH} component={AboutScreen} />
         </Router>
       </div>
     )
   }
-
-  renderMainScreen = () => <MainScreen />
 
   renderProductsScreen = () => (
     <ProductsScreen

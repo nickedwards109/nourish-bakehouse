@@ -1,0 +1,70 @@
+$hover-transition: 200ms ease-out;
+
+.nav {
+  opacity: 1;
+  transition: opacity 1s;
+  background: #001205;
+
+  & > ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  &.initial {
+    opacity: 0;
+  }
+}
+
+.link {
+  opacity: 1;
+  transition: opacity 800ms;
+
+  & > a {
+    border-radius: 3px;
+    color: #d5e5d7;
+    display: inline-block;
+    margin: 5px 0;
+    padding: 15px;
+    position: relative;
+    transition: background $hover-transition, color $hover-transition, margin $hover-transition;
+
+    &:hover {
+      background: #6c7904;
+      color: white;
+      margin-top: 0;
+
+      &::after {
+        bottom: -5px;
+        height: 7px;
+      }
+    }
+
+    &::after {
+      content: ' ';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      transition: height $hover-transition, bottom $hover-transition;
+    }
+  }
+
+  &.initial {
+    opacity: 0;
+  }
+
+  &.homeLink {
+    transition-delay: 100ms;
+  }
+
+  &.productsLink {
+    transition-delay: 200ms;
+  }
+
+  &.aboutLink {
+    transition-delay: 300ms;
+  }
+}
