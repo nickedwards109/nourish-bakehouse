@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import classnames from 'classnames'
-import { PRODUCTS_PATH, ABOUT_PATH } from '../../constants'
+import { PRODUCTS_PATH, ABOUT_PATH, LOCATIONS_PATH } from '../../constants'
 import styles from './index.scss'
 
 export default class Nav extends React.PureComponent {
@@ -23,6 +23,7 @@ export default class Nav extends React.PureComponent {
           {this.renderHomeLink()}
           {this.renderProductsLink()}
           {this.renderAboutLink()}
+          {this.renderLocationsLink()}
         </ul>
       </nav>
     )
@@ -58,6 +59,17 @@ export default class Nav extends React.PureComponent {
         !this.state.isMounted && styles.initial
       )}
       children={<Link to={ABOUT_PATH} children='About' />}
+    />
+  )
+
+  renderLocationsLink = () => (
+    <li
+      className={classnames(
+        styles.link,
+        styles.locationsLink,
+        !this.state.isMounted && styles.initial
+      )}
+      children={<Link to={LOCATIONS_PATH} children='Locations' />}
     />
   )
 }

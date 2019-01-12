@@ -5,8 +5,9 @@ import Nav from 'components/nav'
 import AboutScreen from 'screens/about'
 import MainScreen from 'screens/main'
 import ProductsScreen from 'screens/products'
+import LocationsScreen from 'screens/locations'
 import ProductStore from 'stores/product'
-import { PRODUCTS_PATH, ABOUT_PATH } from './constants'
+import { PRODUCTS_PATH, ABOUT_PATH, LOCATIONS_PATH } from './constants'
 import styles from './App.scss'
 
 export default class App extends React.Component {
@@ -27,9 +28,12 @@ export default class App extends React.Component {
         <Router>
           <Nav />
 
-          <Route exact path='/' component={MainScreen} />
-          <Route path={PRODUCTS_PATH} render={this.renderProductsScreen} />
-          <Route path={ABOUT_PATH} component={AboutScreen} />
+          <div className={styles.content}>
+            <Route exact path='/' component={MainScreen} />
+            <Route path={PRODUCTS_PATH} render={this.renderProductsScreen} />
+            <Route path={ABOUT_PATH} component={AboutScreen} />
+            <Route path={LOCATIONS_PATH} component={LocationsScreen} />
+          </div>
         </Router>
       </div>
     )

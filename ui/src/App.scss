@@ -5,3 +5,11 @@ body {
 .container {
   text-align: center;
 }
+
+.content {
+  padding: 2rem 5rem;
+
+  @media (max-width: 400px) {
+    padding: 2rem 4rem;
+  }
+}
