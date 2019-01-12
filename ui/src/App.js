@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import LogoPanel from 'components/logoPanel'
 import Nav from 'components/nav'
 import AboutScreen from 'screens/about'
 import MainScreen from 'screens/main'
@@ -22,6 +23,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div className={styles.container}>
+        <LogoPanel />
         <Router>
           <Nav />
 

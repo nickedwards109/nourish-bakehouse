@@ -1,0 +1,30 @@
+$line-transition: 1.5s ease-in-out;
+$logo-transition: 1.5s ease-out;
+
+.container {
+  height: 75px;
+}
+
+.line {
+  display: inline-block;
+  opacity: 1;
+  transition: width $line-transition, opacity $line-transition;
+  width: 30%;
+
+  &.initial {
+    opacity: 0;
+    width: 1%;
+  }
+}
+
+.logoContainer {
+  line-height: 80px;
+  margin: 0 16px;
+  opacity: 1;
+  transition: opacity $logo-transition;
+  vertical-align: super;
+
+  &.initial {
+    opacity: 0;
+  }
+}
